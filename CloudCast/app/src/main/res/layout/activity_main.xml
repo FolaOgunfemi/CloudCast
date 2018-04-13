@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+
+    android:paddingLeft="32dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context="ogunfemi.folaranmi.cloudcast.ui.MainActivity">
+
+    <TextView
+        android:id="@+id/temperatureLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="58"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+
+        android:textColor="@android:color/white"
+        android:textSize="150sp" />
+
+    <ImageView
+        android:id="@+id/degreeImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/locationLabel"
+        android:layout_alignRight="@+id/locationLabel"
+        android:layout_below="@+id/timeLabel"
+        android:layout_marginEnd="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginTop="33dp"
+        android:src="@drawable/degree" />
+
+    <TextView
+        android:id="@+id/timeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/temperatureLabel"
+        android:text="..."
+        android:textColor="#80ffffff"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/locationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/timeLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:text="Alcatraz Island, CA"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/iconImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/locationLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/cloudy_night" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/temperatureLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="50"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/humidityLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="HUMIDITY"
+                android:textColor="#80FFFFFF" />
+
+            <TextView
+                android:id="@+id/humidityValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="0.69"
+                android:textColor="@android:color/white"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="50"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/precipLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="RAIN/SNOW?"
+                android:textColor="#80ffffff" />
+
+            <TextView
+                android:id="@+id/precipValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="72%"
+                android:textColor="@android:color/white"
+                android:textSize="24sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/summaryLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="40dp"
+        android:gravity="center_horizontal"
+        android:text="Summary: Expect Precipitation and Mild Humidity"
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/refreshImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/refresh" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/refreshImageView"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:id="@+id/ButtonsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/hourlyButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+            android:background="#018e48"
+            android:text="Hourly"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <Button
+            android:id="@+id/dailyButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+
+            android:background="#018e48"
+            android:text="Daily"
+            android:textColor="@color/colorPrimaryDark" />
+    </LinearLayout>
+
+</RelativeLayout>
